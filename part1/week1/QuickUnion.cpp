@@ -18,19 +18,18 @@ class UF
         int i = p;
         while(i != id[i])
             i = id[i];
-        return i;    
+        return i;
     }
-  public:	
+  public:
     bool connected(int p,int q)
         { return(root(p)==root(q));}
-    void unionfind(int p,int q)
+    void connect(int p,int q)
     {
         int pid = root(p);
         int qid = root(q);
         if(!connected(p,q))
-            id[p] = qid;
+            id[pid] = qid;
     }
-    
 };
 
 
@@ -39,10 +38,10 @@ int main()
     int N;
     cin >> N;
     UF uf(N);
-    uf.unionfind(1,2);
-    uf.unionfind(2,3);
-    uf.unionfind(1,3);
-    uf.unionfind(4,5);
+    uf.connect(1,2);
+    uf.connect(2,3);
+    uf.connect(1,3);
+    uf.connect(4,5);
     if(uf.connected(1,5))
         cout << "1 is connected to 5 " << endl;
     else
