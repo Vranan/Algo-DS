@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-// import edu.princeton.cs.algs4.StdOut;
-// import edu.princeton.cs.algs4.In;
-// import edu.princeton.cs.algs4.StdDraw;
+// import "Point.java";
+// import "LineSegment.java";
 
 public class FastCollinearPoints {
     private ArrayList<LineSegment> segList = new ArrayList<>();
@@ -28,7 +27,7 @@ public class FastCollinearPoints {
                 while (end < pt.length && p.slopeTo(pt[end]) == p.slopeTo(pt[strt])) end++;
                 if (end - strt >= 3) {
                     Point ptMin = p.compareTo(pt[strt]) < 0 ? p : pt[strt];
-                    Point ptMax = p.compareTo(pt[end-1]) > 0 ? p : pt[end];
+                    Point ptMax = p.compareTo(pt[end-1]) > 0 ? p : pt[end-1];
                     if (p == ptMin) {
                         segList.add(new LineSegment(ptMin, ptMax));
                     }
@@ -51,10 +50,12 @@ public class FastCollinearPoints {
             // read the n points from a file
             In in = new In(args[0]);
             int n = in.readInt();
+            // System.out.println("n = " + n);
             Point[] points = new Point[n];
             for (int i = 0; i < n; i++) {
                 int x = in.readInt();
                 int y = in.readInt();
+                System.out.println("x = " + x + ", y = " + y);
                 points[i] = new Point(x, y);
             }
             
@@ -63,16 +64,19 @@ public class FastCollinearPoints {
             StdDraw.setXscale(0, 32768);
             StdDraw.setYscale(0, 32768);
             for (Point p : points) {
+            	// StdOut.println("point = " + p);
                 p.draw();
             }
             StdDraw.show();
             
             // print and draw the line segments
             FastCollinearPoints collinear = new FastCollinearPoints(points);
+            // LineSegment[] seg = collinear.segments();
+            // StdOut.println("seg = " + seg);
             for (LineSegment segment : collinear.segments()) {
-                StdOut.println(segment);
+                // StdOut.println("Segment = " + segment);
                 segment.draw();
-            }
+            } 
             StdDraw.show();
         } */
     }

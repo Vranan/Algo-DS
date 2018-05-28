@@ -1,6 +1,14 @@
 import edu.princeton.cs.algs4.StdDraw;
 import java.util.Comparator;
 
+/**
+ * @author nxa27422
+ *
+ */
+/**
+ * @author nxa27422
+ *
+ */
 public class Point implements Comparable<Point> {
     private int x;
     private int y;
@@ -46,24 +54,25 @@ public class Point implements Comparable<Point> {
             }
         };
     }
-    
-    public static void main(String[] args) {
-        int x1 = 1;
-        int y1 = 2;
-        int x2 = 30000;
-        int y2 = 40000;
-        Point pt = new Point(x1, y1);
-        Point p = new Point(x2, y2);
+  
+    /* public static void main(String[] args) {
+        Point p1 = new Point(1, 2);
+        Point p2 = new Point(1000, 20000);
+        Point p3 = new Point(500, 1000);
+        Point p4 = new Point(8000, 10000);
         
-        System.out.println(pt.toString());
-        System.out.println(pt.compareTo(p));
-        System.out.println("slope = " + pt.slopeTo(p));
+        System.out.println(p1.toString());
+        System.out.println(p1.compareTo(p2));
+        System.out.println("slope = " + p1.slopeTo(p2));
         // pt.draw();
         
         StdDraw.enableDoubleBuffering();
         StdDraw.setXscale(0, 32768);
         StdDraw.setYscale(0, 32768);
-        pt.drawTo(p);
+        p1.draw();
+        p2.draw();
+        p3.draw();
+        p4.draw();
         StdDraw.show();        
-    }
+    } */
 }
