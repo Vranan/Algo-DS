@@ -7,7 +7,7 @@ public class WeightedQuickUnionUF {
         array_size = N*N + 2;
         id = new int[array_size];
         sz = new int[array_size];
-        for(int i=0;i<array_size;i++)
+        for (int i = 0; i < array_size; i++)
         {
              id[i]=i;
              sz[i]=1;
@@ -16,7 +16,7 @@ public class WeightedQuickUnionUF {
     
     private int root(int p)
     {
-        while(id[p] != p)
+        while (id[p] != p)
         {
             id[p] = id[id[p]];
             p = id[p];
