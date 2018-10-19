@@ -18,10 +18,10 @@ void dijikstra(int source, int N) {
 	Q.insert({0,source});
 	while(!Q.empty()) {
 		auto top = Q.begin();
-		int u = top->second;
+		int u = top->second;     // gives the vertex from which the distance of the other neighbour vertices  distance is to be updated.
 		Q.erase(top);
 		for (auto next: G[u]) {
-			int v = next.first, w = next.second;
+			int v = next.first, w = next.second;  // From the graph obtained the neighbours of u and the associated distance between them.
 			if (D[v] > D[u]+w) {
 				it = Q.find({D[v],v});
 				Q.erase(it);
