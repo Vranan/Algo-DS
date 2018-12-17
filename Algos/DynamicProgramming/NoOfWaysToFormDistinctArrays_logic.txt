@@ -1,0 +1,26 @@
+Approach: The problem can be solved using Dynamic Programming. 
+Let, f(i) represent the number of ways to form the array till the ith index, 
+such that every consecutive element of the array is distinct. 
+Let f(i, One) represent the number of ways to form the array till the i-th index 
+such that every consecutive element of the array is distinct and arri = 1.
+Similarly, let f(i, Non-One) represent the number of ways to form the array 
+till the ith index, such that every consecutive element of the array is distinct and arri is not equal to 1.
+
+The following recurrence is formed:
+
+f(i, Non-One) = f(i - 1, One) * (M - 1) + f(i - 1, Non-One) * (M - 2)
+which means that the number of ways to form the array till the ith index 
+with arrayi not equal to 1 is formed using two cases:
+
+If the number at arrayi – 1 is 1, 
+then opt one number out of (M – 1) options to place at the ith index, 
+since arrayi is not equal to 1.
+If the number at arrayi – 1 is not 1, 
+then we need to opt one number out of (M – 2) options, 
+since arrayi is not equal to 1 and arrayi ? arrayi – 1.
+
+Similarly, f(i, One) = f(i – 1, Non-One), 
+since the number of ways to form the array till the ith index with arrayi = 1, 
+is same as number of ways to form the array till the (i – 1)th index with arrayi – 1 ? 1, 
+thus at the ith index there is only one option. At the end the required answer if f(N, One) 
+since arrayN needs to be equal to 1.
